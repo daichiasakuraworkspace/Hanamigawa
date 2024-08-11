@@ -1,71 +1,13 @@
-// メニューを開く関数
-const slideDown = (el) => {
-  el.classList.add('is-open');
-  el.style.removeProperty('display');
-  let display = window.getComputedStyle(el).display;
-  if (display === 'none') {
-    display = 'block';
-  }
-  const height = el.offsetHeight;
-  el.style.overflow = 'hidden';
-  el.style.height = 0;
-  el.style.paddingTop = 0;
-  el.style.paddingBottom = 0;
-  el.style.marginTop = 0;
-  el.style.marginBottom = 0;
-  el.offsetHeight;
-  el.style.transitionProperty = 'height, margin, padding';
-  el.style.transitionDuration = '300ms';
-  el.style.transitionTimingFunction = 'ease';
-  el.style.height = height + 'px';
-  el.style.removeProperty('padding-top');
-  el.style.removeProperty('padding-bottom');
-  el.style.removeProperty('margin-top');
-  el.style.removeProperty('margin-bottom');
-  setTimeout(() => {
-    el.style.removeProperty('height');
-    el.style.removeProperty('overflow');
-    el.style.removeProperty('transition-duration');
-    el.style.removeProperty('transition-property');
-    el.style.removeProperty('transition-timing-function');
-  }, 300);
-};
-
-// メニューを閉じる関数
-const slideUp = (el) => {
-  el.style.height = el.offsetHeight + 'px';
-  el.offsetHeight;
-  el.style.transitionProperty = 'height, margin, padding';
-  el.style.transitionDuration = '300ms';
-  el.style.transitionTimingFunction = 'ease';
-  el.style.overflow = 'hidden';
-  el.style.height = 0;
-  el.style.paddingTop = 0;
-  el.style.paddingBottom = 0;
-  el.style.marginTop = 0;
-  el.style.marginBottom = 0;
-  setTimeout(() => {
-    el.style.display = 'none';
-    el.style.removeProperty('height');
-    el.style.removeProperty('padding-top');
-    el.style.removeProperty('padding-bottom');
-    el.style.removeProperty('margin-top');
-    el.style.removeProperty('margin-bottom');
-    el.style.removeProperty('overflow');
-    el.style.removeProperty('transition-duration');
-    el.style.removeProperty('transition-property');
-    el.style.removeProperty('transition-timing-function');
-    el.classList.remove('is-open');
-  }, 300);
-};
-
-const slideToggle = (el) => {
-  if (window.getComputedStyle(el).display === 'none') {
-    return slideDown(el);
+/* ヘッダー */
+document.addEventListener('headerLoaded', function () {
+  const header = document.querySelector('header');
+  if (window.matchMedia('(max-width: 966px)').matches) {
+    /* 現在表示しているレイアウトを判別 */
+    header.classList.add('sp-header');
   } else {
-    return slideUp(el);
-  }
-};
+    header.classList.add('pc-header');
+  };
+});
 
 // PCSP画像切替
 const changeImageEachDevice = () => {
@@ -188,4 +130,46 @@ document.addEventListener('DOMContentLoaded', function () {
       };
     }
   }
+});
+
+document.addEventListener('footerLoaded', function () {
+  const pagetopArea = document.querySelector('.pagetop');
+
+  // 1画面分下スクロールでページトップボタン表示
+  let lastScrollPosition = window.scrollY; // 最後のスクロール位置を保存
+  const throttle = function (fn, interval) {
+    let lastTime = Date.now() - interval;
+    return function () {
+      if (lastTime + interval < Date.now()) {
+        lastTime = Date.now();
+        fn();
+      }
+    };
+  };
+  document.addEventListener(
+    'scroll',
+    throttle(function () {
+      const viewportHeight = window.innerHeight;
+      const currentScrollPosition = window.scrollY;
+
+      if (currentScrollPosition > lastScrollPosition) {
+        /* 下スクロール */
+        if (currentScrollPosition >= viewportHeight) {
+          // 1画面スクロールで表示
+          if (pagetopArea) {
+            pagetopArea.classList.add('is-show');
+          }
+        }
+      } else {
+        /* 上スクロール */
+        if (currentScrollPosition < viewportHeight) {
+          // 1画面分未満スクロールで非表示
+          if (pagetopArea) {
+            pagetopArea.classList.remove('is-show');
+          }
+        }
+      }
+      lastScrollPosition = window.scrollY; // 最後のスクロール位置を更新
+    }, 66) // 66ms間隔で実行
+  );
 });
