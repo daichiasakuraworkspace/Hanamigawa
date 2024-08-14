@@ -12,14 +12,27 @@ body {
   background: #fff;
   margin: 0;
 }
+ul{
+  margin: 0;
+  padding: 0;
+}
 li{
   list-style:none;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  opacity: .8;
+}
+
+img{
+  display: block;
 }
 
 /* Header Setting */
 .header {
-  height: 70px;
-  padding: 0 5px;
+  padding: 0;
 }
 .header__inner {
   margin: 0 auto;
@@ -41,7 +54,9 @@ li{
   display: flex;
   justify-content: space-between;
   max-width: 950px;
+  align-items: center;
   width: 100%;
+  height: 70px;
   margin: auto;
 }
 .header__pc-menu-list{
@@ -54,6 +69,86 @@ li{
 }
 .header__pc-insta-logo img{
   width: 32px;
+}
+.header__pc-menu-btn{
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 700;
+}
+/* FOOTER */
+.footer{
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+.footer::after{
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 110px;
+  background: url(/common/images/town_black.png) ;
+  background-size: contain;
+  background-repeat: repeat;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+.footer *{
+  z-index: 1;
+}
+.footer-menu{
+  display: flex;
+  justify-content: space-between;
+  max-width: 950px;
+  padding: 90px 0 64px 0;
+  margin: auto;
+}
+.footer-menu__text{
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+.footer-menu__list-item{
+  font-size: 1.4rem;
+  margin: 30px 0 0;
+}
+.footer-menu__list-item:first-child{
+  margin: 0;
+}
+.footer-menu__note-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0 0;
+}
+.footer-menu__note-list-item > a{
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.625;
+  padding: 0 16px 0 32px;
+  position: relative;
+  text-align: left;
+  color: #fff;
+}
+.footer-menu__note-list-item > a::before{
+  align-items: center;
+  bottom: 0;
+  color: #fff;
+  content: "｜";
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.footer-menu__note-list-item{
+  display: inline-block;
+}
+.footer-menu__note-list-item:first-child a{
+  padding-left: 0;
+}
+.footer-menu__note-list-item:first-child > a::before {
+  content: none;
 }
 /* base */
 .pc-only{
