@@ -1,14 +1,3 @@
-/* ヘッダー */
-document.addEventListener('headerLoaded', function () {
-  const header = document.querySelector('header');
-  if (window.matchMedia('(max-width: 966px)').matches) {
-    /* 現在表示しているレイアウトを判別 */
-    header.classList.add('sp-header');
-  } else {
-    header.classList.add('pc-header');
-  };
-});
-
 // PCSP画像切替
 const changeImageEachDevice = () => {
   const changeimgs = document.querySelectorAll('.js-img-switch');
@@ -32,24 +21,6 @@ const changeImageEachDevice = () => {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-  // ローカルナビ表示位置調整
-  {
-    function adjustLnavPos() {
-      const breadcrumbTop = document.querySelector('#breadcrumbTop');
-      const floatingMenu = document.querySelector('.floating-menu.js-submenu-open-pc');
-
-      if (!breadcrumbTop || !floatingMenu) {
-        return;
-      }
-      if (breadcrumbTop.offsetHeight > 29) {
-        const offset = breadcrumbTop.offsetHeight - 29;
-        const floatingMenuTop = parseInt(getComputedStyle(floatingMenu).top);
-        floatingMenu.style.top = `${floatingMenuTop + offset}px`;
-      }
-    }
-
-    adjustLnavPos();
-  }
 
   // アコーディオン開閉の処理
   {
@@ -172,4 +143,119 @@ document.addEventListener('footerLoaded', function () {
       lastScrollPosition = window.scrollY; // 最後のスクロール位置を更新
     }, 66) // 66ms間隔で実行
   );
+});
+
+window.addEventListener('load', function () {
+  /* ヘッダー */
+
+   /* start:SPハンバーガーメニュー開閉 */
+   const spMenuBtnBtm = document.querySelector('.js-sp-menu-btn-bottom');
+   const spMenuBtnTop = document.querySelector('.js-sp-menu-btn');
+   const spMenuBody = document.querySelector('.js-menu-sp-body');
+
+   const overlay = document.querySelector('.drop-overlay');
+
+   const spMenuOpen = document.querySelector('.js-menu-open-sp');
+   if (spMenuOpen) {
+     spMenuOpen.addEventListener('click', function () {
+      spMenuBody.classList.add('is-open');
+     });
+   }
+
+   const spMenuClose = document.querySelector('.js-menu-close-sp');
+   if (spMenuClose) {
+     spMenuClose.addEventListener('click', function () {
+       /* コンテンツフェードアウト後にメニューを閉じる */
+         spMenuBody.classList.remove('is-open');
+     });
+   }
+   /* end:SPハンバーガーメニュー開閉 */
+  // KVカルーセルのswiperの処理
+  {
+    const top_swiperElm = document.querySelectorAll('.js-swiper-top-keyvisual');
+    if (top_swiperElm.length) {
+      const top_swiper = new Swiper('.js-swiper-top-keyvisual', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        breakpoints: {
+          // 768px以上の場合
+          768: {
+            spaceBetween: 60,
+          },
+        },
+        pagination: {
+          el: '.top-keyvisual-carousel__pagination',
+          clickable: true,
+        },
+        // ナビボタンが必要なら追加
+        navigation: {
+          nextEl: '.top-keyvisual-carousel__button-next',
+          prevEl: '.top-keyvisual-carousel__button-prev',
+        },
+        loop: true,
+        speed: 500,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        on: {
+          // スライドの切り替わりアニメーションが終了した時に実行
+          slideChangeTransitionEnd: function () {
+            if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+              const swiperPageNum = this.realIndex;
+              const swiper_pagination = document.getElementsByClassName('top-keyvisual-carousel__page');
+              const swiper_wrapper = document.getElementsByClassName('swiper-wrapper');
+              const swiper_item = document.getElementsByClassName('swiper-slide');
+              swiper_pagination[0].style.marginTop = swiper_item[swiperPageNum].children[0].clientHeight - swiper_wrapper[0].clientHeight + 16 + 'px';
+              // swiper_itemの高さ - swiper_wrapper（スライダー全体）の高さ + 16pxのマージントップをページネーションに付与
+              /* const swiper_inner = document.getElementsByClassName('top-keyvisual-carousel__inner'); */
+              /* swiper_inner[0].style.height = swiper_item[swiperPageNum + 1].children[0].clientHeight + 16 + 'px'; */
+            }
+          },
+        },
+      });
+
+      const top_trigger = document.querySelectorAll('.js-top-keyvisual-carousel-stop');
+
+      for (let i = 0; i < top_trigger.length; i++) {
+        top_trigger[i].addEventListener('click', () => {
+          const top_activeSwipe = top_swiper.length ? top_swiper[i] : top_swiper;
+          if (top_activeSwipe.autoplay.running) {
+            top_activeSwipe.autoplay.stop();
+            top_trigger[i].classList.add('is-stop');
+          } else {
+            top_activeSwipe.autoplay.start();
+            top_trigger[i].classList.remove('is-stop');
+          }
+        });
+      }
+
+      // Intersection Observerの設定
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5, // ターゲット要素の画面内領域が50%を下回った時にcallbackを発火
+      };
+
+      if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // ビューポート内に入ったときの処理
+              top_swiper.autoplay.start();
+              console.log('start');
+            } else {
+              // ビューポートから出たときの処理
+              top_swiper.autoplay.stop();
+              console.log('stop');
+            }
+          });
+        }, options);
+
+        // スライダーを監視対象に追加
+        observer.observe(document.querySelector('.js-swiper-top-keyvisual'));
+      }
+    }
+  }
 });
