@@ -258,4 +258,42 @@ window.addEventListener('load', function () {
       }
     }
   }
+    const pagetopArea = document.querySelector('.pagetop');
+    // 1画面分下スクロールでページトップボタン表示
+    let lastScrollPosition = window.scrollY; // 最後のスクロール位置を保存
+    const throttle = function (fn, interval) {
+      let lastTime = Date.now() - interval;
+      return function () {
+        if (lastTime + interval < Date.now()) {
+          lastTime = Date.now();
+          fn();
+        }
+      };
+    };
+    document.addEventListener(
+      'scroll',
+      throttle(function () {
+        const viewportHeight = window.innerHeight;
+        const currentScrollPosition = window.scrollY;
+
+        if (currentScrollPosition > lastScrollPosition) {
+          /* 下スクロール */
+          if (currentScrollPosition >= viewportHeight) {
+            // 1画面スクロールで表示
+            if (pagetopArea) {
+              pagetopArea.classList.add('is-show');
+            }
+          }
+        } else {
+          /* 上スクロール */
+          if (currentScrollPosition < viewportHeight) {
+            // 1画面分未満スクロールで非表示
+            if (pagetopArea) {
+              pagetopArea.classList.remove('is-show');
+            }
+          }
+        }
+        lastScrollPosition = window.scrollY; // 最後のスクロール位置を更新
+      }, 66) // 66ms間隔で実行
+    );
 });
