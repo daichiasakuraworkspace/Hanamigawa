@@ -437,11 +437,15 @@ img{
 .top-menu-wrap{
   display: flex;
   justify-content: center;
-  gap: 35px;
+  gap: 2%;
   flex-wrap: wrap;
 }
+.top-menu-content{
+  width: 18%;
+}
 .top-menu-content__image img{
-  width: 130px;
+  width: 100%;
+  max-width: 130px;
   margin: auto;
 }
 .top-menu-content__title , .top-category-item__title{
@@ -454,17 +458,28 @@ img{
   border-bottom: #000 solid 3px;
   position: relative;
 }
-.top-news::after{
+.top-news::before,.top-news::after,.top-category::before,.top-category::after{
   position: absolute;
   content: "";
-  width: 810px;
-  height: 115px;
-  background: url(/common/images/news_bg.png) no-repeat;
-  background-size: contain;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
   z-index: 0;
+}
+.top-category-content{
+  width: 14%;
+}
+.top-news::before{
+  background: url(/common/images/news_bg_01.png) no-repeat;
+  background-size: contain;
+  width: 305px;
+  height: 109px;
+  left: 20%;
+}
+.top-news::after{
+  background: url(/common/images/news_bg_02.png) no-repeat;
+  background-size: contain;
+  width: 210px;
+  height: 115px;
+  right: 20%;
 }
 .top-news__inner{
   max-width: 950px;
@@ -586,12 +601,27 @@ img{
 .top-category-wrap{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   margin-top: 40px;
 }
 .top-category-item__image img{
-  width: 140px;
+  width: 100%;
+  max-width: 140px;
+}
+.top-category::before{
+  background: url(/common/images/category_bg_01.png) no-repeat;
+  background-size: contain;
+  width: 235px;
+  height: 90px;
+  left: 20%;
+}
+.top-category::after{
+  background: url(/common/images/category_bg_02.png) no-repeat;
+  background-size: contain;
+  width: 395px;
+  height: 113px;
+  right: 20%;
 }
 .top-cp{
   padding: 90px 0;
@@ -612,8 +642,9 @@ img{
   .sp-only{
     display: block;
   }
-  .section + div {
-    padding: 0 5%;
+  .section > div {
+    padding-left: 5%;
+    padding-right: 5%;
   }
   .pagetop{
     right: 16px;
@@ -741,9 +772,6 @@ img{
   .top-keyvisual-carousel{
     padding: 15px 5% 30px;
   }
-  .top-menu{
-    padding: 5%;
-  }
   .top-menu-wrap{
     gap: 0 15px;
   }
@@ -757,6 +785,9 @@ img{
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+  .top-cp-item__image img{
+    width: 100%;
   }
   .top-cp-wrap{
     flex-direction: column;
