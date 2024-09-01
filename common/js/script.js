@@ -230,32 +230,6 @@ window.addEventListener('load', function () {
           }
         });
       }
-
-      // Intersection Observerの設定
-      const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5, // ターゲット要素の画面内領域が50%を下回った時にcallbackを発火
-      };
-
-      if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // ビューポート内に入ったときの処理
-              top_swiper.autoplay.start();
-              console.log('start');
-            } else {
-              // ビューポートから出たときの処理
-              top_swiper.autoplay.stop();
-              console.log('stop');
-            }
-          });
-        }, options);
-
-        // スライダーを監視対象に追加
-        observer.observe(document.querySelector('.js-swiper-top-keyvisual'));
-      }
     }
   }
     const pagetopArea = document.querySelector('.pagetop');
@@ -275,6 +249,8 @@ window.addEventListener('load', function () {
       throttle(function () {
         const viewportHeight = window.innerHeight;
         const currentScrollPosition = window.scrollY;
+
+        console.log(viewportHeight)
 
         if (currentScrollPosition > lastScrollPosition) {
           /* 下スクロール */
