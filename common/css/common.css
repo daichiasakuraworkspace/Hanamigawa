@@ -50,7 +50,7 @@ img{
 .header__inner {
   left: 0;
   position: fixed;
-  top: 0;
+  top: -1px;
   transition: all 0.15s ease-out;
   width: 100%;
   z-index: 100;
