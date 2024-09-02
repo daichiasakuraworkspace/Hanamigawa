@@ -85,16 +85,13 @@ window.addEventListener('load', function () {
   /* ヘッダー */
 
    /* start:SPハンバーガーメニュー開閉 */
-   const spMenuBtnBtm = document.querySelector('.js-sp-menu-btn-bottom');
-   const spMenuBtnTop = document.querySelector('.js-sp-menu-btn');
    const spMenuBody = document.querySelector('.js-menu-sp-body');
-
-   const overlay = document.querySelector('.drop-overlay');
-
    const spMenuOpen = document.querySelector('.js-menu-open-sp');
+   const spBody= document.querySelector('body');
    if (spMenuOpen) {
      spMenuOpen.addEventListener('click', function () {
       spMenuBody.classList.add('is-open');
+      spBody.style.overflow = 'hidden';
      });
    }
 
@@ -103,6 +100,7 @@ window.addEventListener('load', function () {
      spMenuClose.addEventListener('click', function () {
        /* コンテンツフェードアウト後にメニューを閉じる */
          spMenuBody.classList.remove('is-open');
+         spBody.style.overflow = null;
      });
    }
    /* end:SPハンバーガーメニュー開閉 */
@@ -185,9 +183,6 @@ window.addEventListener('load', function () {
       throttle(function () {
         const viewportHeight = window.innerHeight;
         const currentScrollPosition = window.scrollY;
-
-        console.log(viewportHeight)
-
         if (currentScrollPosition > lastScrollPosition) {
           /* 下スクロール */
           if (currentScrollPosition >= viewportHeight) {
