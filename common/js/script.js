@@ -166,6 +166,55 @@ window.addEventListener('load', function () {
       }
     }
   }
+
+  // 店舗詳細のswiperの処理
+  {
+    const swiperElm = document.querySelectorAll('.js-swiper-shop-about');
+    if (swiperElm.length) {
+      const swiper = new Swiper('.js-swiper-shop-about', {
+        slidesPerView: 'auto',
+        observer: true,
+        observeParents: true,
+        spaceBetween: 15,
+        breakpoints: {
+          // 768px以上の場合
+          768: {
+            spaceBetween: 42,
+          },
+        },
+        pagination: {
+          el: '.shop-about-carousel__pagination',
+          clickable: true,
+        },
+        // ナビボタンが必要なら追加
+        navigation: {
+          nextEl: '.shop-about-carousel__button-next',
+          prevEl: '.shop-about-carousel__button-prev',
+        },
+        loop: true,
+        speed: 500,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        }
+      });
+      const trigger = document.querySelectorAll('.js-shop-about-carousel-stop');
+
+      for (let i = 0; i < trigger.length; i++) {
+        trigger[i].addEventListener('click', () => {
+          const activeSwipe = swiper.length ? swiper[i] : swiper;
+          if (activeSwipe.autoplay.running) {
+            activeSwipe.autoplay.stop();
+            trigger[i].classList.add('is-stop');
+          } else {
+            activeSwipe.autoplay.start();
+            trigger[i].classList.remove('is-stop');
+          }
+        });
+      }
+    }
+  }
     const pagetopArea = document.querySelector('.pagetop');
     // 1画面分下スクロールでページトップボタン表示
     let lastScrollPosition = window.scrollY; // 最後のスクロール位置を保存
