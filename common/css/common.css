@@ -29,6 +29,9 @@ a:hover{
 img{
   display: block;
 }
+.section__text-bold{
+  font-weight: 700;
+}
 .pagetop{
   bottom: -65px;
   position: fixed;
@@ -397,7 +400,7 @@ img{
   }
   .top-keyvisual-carousel__page {
     bottom: 90px;
-    right: 20%;
+    left: calc(50% - -10px);
     max-width: 540px;
     position: absolute;
   }
