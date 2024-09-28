@@ -751,6 +751,50 @@ img{
 .shop-about-head__text{
   font-size: 1.4rem;
 }
+/* ショップ一覧カルーセル */
+.shop-about-carousel__button-prev, .shop-about-carousel__button-next{
+  height: 50px;
+  width: 50px;
+  top: 46%;
+}
+.shop-about-carousel__button-prev::after,
+.shop-about-carousel__button-next::after {
+  display: block;
+  background: url(/common/images/btn_carousel.png) no-repeat;
+  background-size: contain;
+  content: '';
+  height: 50px;
+  width: 50px;
+}
+.shop-about-carousel__button-prev {
+  transform: rotate(180deg);
+}
+.top-keyvisual-carousel__pagination {
+  position: relative;
+  text-align: left;
+  vertical-align: sub;
+  width: auto !important;
+}
+
+.shop-about-carousel > .shop-about-carousel__pagination {
+  width: auto;
+}
+.shop-about-carousel__pagination .swiper-pagination-bullet {
+  background: #E5632C;
+  border: solid 1px #E5632C;
+  height: 12px;
+  margin: 0;
+  width: 12px;
+}
+
+.shop-about-carousel__pagination .swiper-pagination-bullet:nth-child(n + 2) {
+  margin-left: 12px;
+}
+
+.shop-about-carousel__pagination .swiper-pagination-bullet-active {
+  background: #fff;
+  border: solid 1px #E5632C;
+}
 @media screen and (max-width: 767px) {
   .pc-only{
     display: none;
