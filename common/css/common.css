@@ -12,7 +12,7 @@ body {
   background: #fff;
   margin: 0;
 }
-ul{
+ul,p{
   margin: 0;
   padding: 0;
 }
@@ -181,10 +181,12 @@ img{
 #breadcrumbTop, #breadcrumbBottom{
   max-width: 950px;
   width: 100%;
-  margin: auto;
 }
-#breadcrumbTop ul ,  #breadcrumbBottom ul{
-  padding: 25px;
+#breadcrumbTop{
+  margin: 25px auto 0;
+}
+#breadcrumbBottom{
+  margin: 90px auto 25px;
 }
 #breadcrumbTop a, #breadcrumbBottom a{
   color: #000;
@@ -193,7 +195,6 @@ img{
   color: #000;
   display: inline-block;
   font-size: 1.3rem;
-  line-height: 1.6;
 }
 #breadcrumbTop span , #breadcrumbBottom span{
   padding: 0 5px;
@@ -211,13 +212,16 @@ img{
   margin-right: auto;
 }
 .content article > :first-child{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .content article > .top-section {
   margin-bottom: 48px;
   margin-top: 24px;
 }
 @media screen and (min-width: 768px) {
+  .content article > :first-child{
+    margin-top: 30px;
+  }
   .content article > .top-section {
     margin-bottom: 0;
     margin-top: 40px;
@@ -429,7 +433,7 @@ img{
 }
 
 .top-keyvisual-carousel__button-pouse {
-  background: url(/common/images/play_icon.png) no-repeat;
+  background: url(/common/images/stop_icon.png) no-repeat;
   background-size: cover;
   border-radius: 100%;
   bottom: 0;
@@ -444,7 +448,7 @@ img{
 }
 
 .top-keyvisual-carousel__button-pouse.is-stop {
-  background: url(/common/images/stop_icon.png) no-repeat;
+  background: url(/common/images/play_icon.png) no-repeat;
   background-size: cover;
 }
 
@@ -502,6 +506,7 @@ img{
   font-weight: 700;
   color: #000;
   font-size: 1.4rem;
+  margin: 10px;
 }
 .top-news{
   padding: 90px 0 170px;
@@ -521,7 +526,7 @@ img{
   background: url(/common/images/news_bg_01_pc.png) no-repeat;
   background-size: contain;
   width: 305px;
-  height: 109px;
+  height: 108px;
   right: 50%;
   transform: translate(-50%) translateX(25%);
 }
@@ -529,7 +534,7 @@ img{
   background: url(/common/images/news_bg_02_pc.png) no-repeat;
   background-size: contain;
   width: 210px;
-  height: 115px;
+  height: 114px;
   left: 50%;
   transform: translate(50%) translateX(25%);
 }
@@ -542,7 +547,6 @@ img{
   font-size: 3.6rem;
   font-weight: 700;
   color: #D85D29;
-  margin: 0;
 }
 .top-news__title-en ,.top-category__title-en{
   display: block;
@@ -591,13 +595,11 @@ img{
   background: #D85D29;
   font-weight: 700;
   color: #fff;
-  margin: 0;
 }
 .top-news__label-news{
   background: #2981D8;
 }
 .top-news-item__title{
-  margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
   color: #000;
@@ -606,15 +608,14 @@ img{
   color: #4D4D4D;
   font-size: 1.4rem;
   font-weight: 700;
-  margin: 0;
 }
-.top-news__button-wrap , .top-category__button-wrap{
+.top-news__button-wrap , .top-category__button-wrap , .shop__button-wrap{
   margin-top: 55px;
 }
-.top-news__button , .top-category__button{
+.top-news__button , .top-category__button , .shop__button{
   background: #000;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   display: flex;
   flex-direction: column;
@@ -627,15 +628,17 @@ img{
   position: relative;
   box-sizing: border-box;
 }
-.top-news__button::after , .top-category__button::after{
+.top-news__button::after , .top-category__button::after , .shop__button::after{
   position: absolute;
-  right: 30px;
   top: 50%;
   content: "";
   width: 15px;
   height: 15px;
   border-right: 2px solid #fff;
   border-top: 2px solid #fff;
+}
+.top-news__button::after , .top-category__button::after {
+  right: 30px;
   -webkit-transform: translateY(-50%) rotate(45deg);
   -ms-transform: translateY(-50%) rotate(45deg);
   transform: translateY(-50%) rotate(45deg);
@@ -712,18 +715,26 @@ img{
   font-weight: 700;
   text-align: center;
 }
-.shop-about__inner{
+.shop-info,.shop-map{
+  padding: 90px 0 0;
+}
+.shop-about{
+  padding: 30px 0 0;
+}
+.shop-about__inner,.shop-info__inner{
   max-width: 950px;
   margin: auto;
   width: 100%;
 }
 .shop-about-wrap{
   display: flex;
+  gap: 40px;
+  justify-content: space-between;
 }
 .shop-about-carousel {
   overflow: hidden;
   position: relative;
-  padding-bottom: 39px;
+  padding-bottom: 40px;
   max-width: 480px;
   width: 100%;
   margin-right: 0;
@@ -748,8 +759,16 @@ img{
 .shop-map__inner iframe{
   display: block;
 }
+.shop-about-head{
+  width: 45%;
+}
 .shop-about-head__text{
   font-size: 1.4rem;
+  margin-top: 30px;
+  line-height: 2;
+}
+.shop-about-head__text:first-child{
+  margin-top: 0;
 }
 /* ショップ一覧カルーセル */
 .shop-about-carousel__button-prev, .shop-about-carousel__button-next{
@@ -769,7 +788,34 @@ img{
 .shop-about-carousel__button-prev {
   transform: rotate(180deg);
 }
-.top-keyvisual-carousel__pagination {
+.shop-about-carousel__page{
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  transition: margin 0.5s ease-out;
+  justify-content: center;
+}
+.shop-about-carousel__button-pouse {
+  background: url(/common/images/orange_stop_icon.png) no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  bottom: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin-left: 15px;
+  position: relative;
+  width: 30px;
+  z-index: 11;
+  border: none;
+}
+
+.shop-about-carousel__button-pouse.is-stop {
+  background: url(/common/images/orange_play_icon.png) no-repeat;
+  background-size: cover;
+}
+
+.shop-about-carousel__pagination {
   position: relative;
   text-align: left;
   vertical-align: sub;
@@ -794,6 +840,55 @@ img{
 .shop-about-carousel__pagination .swiper-pagination-bullet-active {
   background: #fff;
   border: solid 1px #E5632C;
+}
+.shop-info-item:first-child{
+  border-top:none
+}
+.shop-info-item{
+  display: flex;
+  background: #FEE3D3;
+  padding: 22px 70px 20px;
+  gap: 15px;
+  border-top: 2px solid #fff;
+}
+.shop-info-item__head{
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100px;
+}
+
+.shop-info-item___text{
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+.shop-info-item___text:first-child{
+  margin-top: 0;
+}
+
+.shop-info-item__link{
+  text-decoration: underline;
+  color: #000;
+  display: inline-block;
+}
+
+.shop-info-item__link:hover{
+  text-decoration: none;
+}
+
+.shop__button{
+  background: #D85D29;
+}
+
+.shop__button::after{
+  left: 30px;
+  -webkit-transform: translateY(-50%) rotate(-135deg);
+  -ms-transform: translateY(-50%) rotate(-135deg);
+  transform: translateY(-50%) rotate(-135deg);
 }
 @media screen and (max-width: 767px) {
   .pc-only{
@@ -998,8 +1093,9 @@ img{
     left: auto;
     transform: none;
   }
-  .top-news__button, .top-category__button{
+  .top-news__button , .top-category__button , .shop__button{
     max-width: 280px;
+    font-size: 1.6rem;
   }
   .top-cp-wrap{
     flex-direction: column;
@@ -1016,7 +1112,58 @@ img{
   .top-news__title-en ,.top-category__title-en{
     font-size: 1.6rem;
   }
-  .top-news__button-wrap, .top-category__button-wrap{
+  .top-news__button-wrap , .top-category__button-wrap , .shop__button-wrap{
     margin-top: 30px;
+  }
+  .shop-about{
+    padding: 15px 0 0;
+  }
+  .shop-about-wrap{
+    flex-direction: column;
+    gap: 25px;
+  }
+  .shop-about-head{
+    width: 100%;
+  }
+  .shop-about-carousel{
+    padding-bottom: 0;
+  }
+  .shop-about-carousel__button-prev, .shop-about-carousel__button-next{
+    height: 40px;
+    width: 40px;
+    top: 40%;
+  }
+  .shop-about-carousel__button-prev::after,
+  .shop-about-carousel__button-next::after {
+    height: 40px;
+    width: 40px;
+  }
+  .content__title img{
+    width: 70%;
+  }
+  #breadcrumbTop{
+    margin: 8px 0 0;
+  }
+  #breadcrumbBottom{
+    margin: 55px 0 8px;
+    margin-top: 55px;
+  }
+  #breadcrumbTop ul, #breadcrumbBottom ul{
+    padding: 0 5%;
+    line-height: 1.2;
+  }
+  .page-label__text{
+    font-size: 2.4rem;
+    padding: 20px;
+    line-height: 1.3;
+  }
+  .shop-info-item{
+    padding: 15px;
+  }
+  .shop-info-item__head{
+    max-width: 20%;
+  }
+  .page-label::after{
+    height: 40px;
   }
 }
