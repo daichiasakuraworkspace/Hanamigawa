@@ -842,14 +842,14 @@ img{
   border: solid 1px #E5632C;
 }
 .shop-info-item:first-child{
-  border-top:none
+  margin-top: 0;
 }
 .shop-info-item{
   display: flex;
   background: #FEE3D3;
-  padding: 22px 70px 20px;
+  padding: 20px 70px;
   gap: 15px;
-  border-top: 2px solid #fff;
+  margin-top: 2px;
 }
 .shop-info-item__head{
   font-weight: 700;
