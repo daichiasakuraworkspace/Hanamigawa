@@ -891,6 +891,14 @@ img{
   text-decoration: none;
 }
 
+.shop-info-item__link{
+  margin-left: 30px;
+}
+
+.shop-info-item__link:first-child{
+  margin-left: 0;
+}
+
 .section__button--important{
   background: #D85D29;
 }
@@ -1329,5 +1337,8 @@ img{
   }
   .search-tab__item{
     width: 49.2%;
+  }
+  .shop-info-item__link{
+    margin-left: 0;
   }
 }
