@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
         accordionWrap.classList.toggle('is-active');
         const content = trigger[i].parentElement.nextElementSibling;
         slideToggle(content);
-        fixHeight();
       });
     }
   }
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
           tabPanelItem.classList.add('is-show');
         }
       });
-      fixHeight();
     }
 
     for (let i = 0; i < tabMenu.length; i++) {

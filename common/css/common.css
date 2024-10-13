@@ -1013,6 +1013,7 @@ img{
   min-height: 124px;
   box-sizing: border-box;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .search-tab__item-number{
@@ -1031,6 +1032,7 @@ img{
 .search-tab__text{
   font-size: 1.8rem;
   font-weight: 700;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -1089,6 +1091,9 @@ img{
   }
   .floating-menu__list-insta-img{
     width: 64px;
+  }
+  .floating-menu__list-label .floating-menu__list-insta{
+    display: inline-block;
   }
   .header__sp-content{
     display: flex;
@@ -1340,5 +1345,8 @@ img{
   }
   .shop-info-item__link{
     margin-left: 0;
+  }
+  .search-tab__text{
+    font-size: 1.6rem;
   }
 }
