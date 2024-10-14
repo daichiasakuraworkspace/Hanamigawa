@@ -1325,10 +1325,17 @@ img{
     bottom: -2px;
     height: calc(100% + 2px);
   }
+  .section__tab-item:first-child{
+    justify-content: left;
+  }
+  .section__tab-item:last-child{
+    justify-content: right;
+  }
   .section__tab-item-inner{
     font-size: 2.8rem;
     border: 2px solid #D85D29;
     border-bottom: none;
+    width: 97%;
   }
   .section__tab-list{
     width: 100%;
