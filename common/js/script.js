@@ -250,4 +250,11 @@ window.addEventListener('load', function () {
         lastScrollPosition = window.scrollY; // 最後のスクロール位置を更新
       }, 66) // 66ms間隔で実行
     );
+
+      // モーダル
+    var luminousTrigger = document.querySelector('.luminous');
+    if( luminousTrigger !== null ) {
+      new Luminous(luminousTrigger);
+    }
+
 });
