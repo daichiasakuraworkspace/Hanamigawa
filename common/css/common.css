@@ -721,7 +721,7 @@ img{
   font-weight: 700;
   text-align: center;
 }
-.shop-info,.shop-map{
+.shop-info,.section-map{
   padding: 55px 0 0;
 }
 .shop-about{
@@ -758,12 +758,12 @@ img{
   width: 100%;
   height: 100%;
 }
-.shop-map__inner{
+.section-map__inner{
   max-width: 950px;
   width: 100%;
   margin: auto;
 }
-.shop-map__inner iframe{
+.section-map__inner iframe{
   display: block;
 }
 .shop-about-head{
@@ -1301,7 +1301,7 @@ img{
   .section__button-wrap{
     margin-top: 30px;
   }
-  .shop-info, .shop-map{
+  .shop-info, .section-map{
     padding-top: 35px;
   }
   .shop-about{
