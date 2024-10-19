@@ -780,7 +780,7 @@ img{
 .shop-about-carousel__button-prev, .shop-about-carousel__button-next{
   height: 50px;
   width: 50px;
-  top: 40%;
+  top: 45%;
 }
 .shop-about-carousel__button-prev::after,
 .shop-about-carousel__button-next::after {
