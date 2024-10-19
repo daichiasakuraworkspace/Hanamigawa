@@ -669,7 +669,6 @@ img{
 }
 .category-item__image img{
   width: 100%;
-  max-width: 140px;
   margin: auto;
 }
 .top-category::before{
@@ -737,6 +736,7 @@ img{
   display: flex;
   gap: 40px;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .shop-about-carousel {
   overflow: hidden;
@@ -781,7 +781,7 @@ img{
 .shop-about-carousel__button-prev, .shop-about-carousel__button-next{
   height: 50px;
   width: 50px;
-  top: 46%;
+  top: 40%;
 }
 .shop-about-carousel__button-prev::after,
 .shop-about-carousel__button-next::after {
@@ -914,7 +914,7 @@ img{
   background: #FEEBD3;
   padding: 55px 0 55px;
 }
-.search__image{
+.modal__image{
   margin-top: 55px;
 }
 
@@ -1280,7 +1280,7 @@ img{
     transform: none;
   }
   .section__button{
-    max-width: 280px;
+    max-width: 290px;
     font-size: 1.6rem;
   }
   .top-cp-wrap{
