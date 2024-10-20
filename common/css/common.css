@@ -672,19 +672,6 @@ img{
 .top-cp{
   padding: 90px 0;
 }
-.top-cp__inner{
-  max-width: 950px;
-  margin: 0 auto;
-}
-.top-cp-wrap{
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-}
-.top-cp-item__image img{
-  max-width: 300px;
-  width: 100%;
-}
 .page-label__text{
   position: relative;
   font-size: 4rem;
@@ -1143,6 +1130,11 @@ img{
   text-decoration: none;
 }
 
+.section__link > picture img ,.section__link > img{
+  display: block;
+  width: 100%;
+}
+
 .anchor-wrap{
   display: flex;
   gap: 25px;
@@ -1408,12 +1400,6 @@ img{
   .section__button{
     max-width: 290px;
     font-size: 1.6rem;
-  }
-  .top-cp-wrap{
-    flex-direction: column;
-  }
-  .top-cp-item__image img {
-    max-width: 100%;
   }
   .category-content{
     width: 29.8%;
