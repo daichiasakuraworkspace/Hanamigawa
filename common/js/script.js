@@ -6,14 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function tabSwitch(element) {
       const tabTargetData = element.currentTarget.dataset.tab;
-      // クリックされた要素の親要素と、その子要素を取得
       const tabList = element.currentTarget.closest('.section__tab-head');
       const tabItems = tabList.querySelectorAll('.section__tab-item');
-
-      // クリックされた要素の親要素の兄弟要素の子要素を取得
       const tabPanelItems = tabList.nextElementSibling.querySelectorAll('.section__tab-body');
 
-      // クリックされたtabの同階層のmenuとpanelのクラスを削除
       tabItems.forEach((tabItem) => {
         tabItem.classList.remove('is-active');
       });
@@ -21,10 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
         tabPanelItem.classList.remove('is-show');
       });
 
-      // クリックされたmenu要素にis-activeクラスを付加
       element.currentTarget.parentElement.classList.add('is-active');
 
-      // クリックしたmenuのデータ属性と等しい値を持つパネルにis-showクラスを付加
       tabPanelItems.forEach((tabPanelItem) => {
         if (tabPanelItem.dataset.tabPanel === tabTargetData) {
           tabPanelItem.classList.add('is-show');
@@ -33,9 +27,52 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     for (let i = 0; i < tabMenu.length; i++) {
-      // 取得したアコーディオンのトリガーにイベントを付与
       tabMenu[i].addEventListener('click', tabSwitch);
     }
+  }
+  // アンカーリンクのスムーズスクロール処理
+  {
+    const anchorLinks = document.querySelectorAll('[href^="#"]:not(.js-noscroll)');
+    let headHeight = 118;
+    if (document.querySelector('.header')) {
+      headHeight = document.querySelector('.header').getBoundingClientRect().height;
+    }
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        // クリック直前にハッシュ値がなくなっていないか
+        if (link.hash == '' || link.hash == null) {
+          return;
+        }
+        // スクロール先の要素を取得
+        const targetElement = document.querySelector(link.hash);
+        if (targetElement == '' || targetElement == null) {
+          return;
+        }
+        event.preventDefault();
+
+        // スクロール先の位置を取得
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        // 現在のスクロール位置とスクロール先の位置の差を計算
+        const currentPosition = window.scrollY;
+        const distance = targetPosition - currentPosition;
+        // スクロールを開始
+        const duration = 500; // スクロールの時間（ミリ秒）
+        const startTime = performance.now();
+        window.requestAnimationFrame(function scroll(time) {
+          const timePassed = time - startTime;
+          const progress = timePassed / duration;
+          const scrollTop = Math.floor(currentPosition + distance * progress);
+          window.scrollTo(0, scrollTop - headHeight);
+          if (timePassed < duration) {
+            window.requestAnimationFrame(scroll);
+          } else {
+            // スクロール位置を微調整
+            const offset = targetElement.getBoundingClientRect().top;
+            window.scrollBy(0, offset - headHeight);
+          }
+        });
+      });
+    });
   }
 
 });

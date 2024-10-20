@@ -531,9 +531,9 @@ img{
   color: #D85D29;
   margin: 30px 0 0;
 }
-.section-h2__title-sub{
+.section__title-sub{
   display: block;
-  font-size: 1.8rem;
+  font-size: 0.5em;
   color: #000;
 }
 .section-h3__title{
@@ -819,6 +819,7 @@ img{
   background: #fff;
   border: solid 1px #E5632C;
 }
+
 .shop-info-item:first-child{
   margin-top: 0;
 }
@@ -1052,7 +1053,7 @@ img{
   margin: auto;
 }
 
-.section__image-box , .section-map{
+.section__image-box , .section-map , .shop-info{
   margin-top: 30px;
 }
 
@@ -1181,7 +1182,7 @@ img{
 }
 /* module */
 .module-item{
-  padding: 55px 0 0;
+  margin-top: 55px;
 }
 @media screen and (max-width: 767px) {
   img{
@@ -1408,8 +1409,8 @@ img{
   .section-h2__title{
     font-size: 2.8rem;
   }
-  .section-h2__title-sub{
-    font-size: 1.6rem;
+  .section__title-sub{
+    font-size: 0.6em;
   }
   .section-h3__title{
     font-size: 2.2rem;
