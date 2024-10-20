@@ -1,31 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // アコーディオン開閉の処理
-  {
-    const trigger = document.querySelectorAll('.js-accordion-switch');
-
-    for (let i = 0; i < trigger.length; i++) {
-      // 取得したアコーディオンのトリガーにイベントを付与
-      trigger[i].addEventListener('click', () => {
-        trigger[i].parentElement.classList.toggle('is-active');
-        const accordionWrap = trigger[i].closest('.section__accordion');
-        accordionWrap.classList.toggle('is-active');
-        const content = trigger[i].parentElement.nextElementSibling;
-        slideToggle(content);
-      });
-    }
-  }
-
-  // タブ切り替えの処理
+  // タブ切り替え
   {
     const tabMenu = document.querySelectorAll('.js-tab-switch');
 
-    function tabSwitch(e) {
-      // クリックされた要素のデータ属性を取得
-      const tabTargetData = e.currentTarget.dataset.tab;
-
+    function tabSwitch(element) {
+      const tabTargetData = element.currentTarget.dataset.tab;
       // クリックされた要素の親要素と、その子要素を取得
-      const tabList = e.currentTarget.closest('.section__tab-head');
+      const tabList = element.currentTarget.closest('.section__tab-head');
       const tabItems = tabList.querySelectorAll('.section__tab-item');
 
       // クリックされた要素の親要素の兄弟要素の子要素を取得
@@ -40,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       // クリックされたmenu要素にis-activeクラスを付加
-      e.currentTarget.parentElement.classList.add('is-active');
+      element.currentTarget.parentElement.classList.add('is-active');
 
       // クリックしたmenuのデータ属性と等しい値を持つパネルにis-showクラスを付加
       tabPanelItems.forEach((tabPanelItem) => {
@@ -56,32 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // 横スクロール可能な要素が横スクロールされた時の処理
-  {
-    const target = document.querySelectorAll('.js-scroll-x');
-    const targetTable = document.querySelectorAll('.js-scroll-table');
-
-    for (let i = 0; i < target.length; i++) {
-      target[i].onscroll = function () {
-        if (target[i].scrollLeft > 0) {
-          target[i].nextElementSibling.classList.add('is-hide');
-        }
-      };
-    }
-
-    for (let i = 0; i < targetTable.length; i++) {
-      targetTable[i].onscroll = function () {
-        if (targetTable[i].scrollLeft > 0) {
-          targetTable[i].nextElementSibling.classList.add('is-hide');
-        }
-      };
-    }
-  }
 });
 
 window.addEventListener('load', function () {
   /* ヘッダー */
-
    /* start:SPハンバーガーメニュー開閉 */
    const spMenuBody = document.querySelector('.js-menu-sp-body');
    const spMenuOpen = document.querySelector('.js-menu-open-sp');
@@ -140,9 +100,6 @@ window.addEventListener('load', function () {
               const swiper_wrapper = document.getElementsByClassName('swiper-wrapper');
               const swiper_item = document.getElementsByClassName('swiper-slide');
               swiper_pagination[0].style.marginTop = swiper_item[swiperPageNum].children[0].clientHeight - swiper_wrapper[0].clientHeight + 16 + 'px';
-              // swiper_itemの高さ - swiper_wrapper（スライダー全体）の高さ + 16pxのマージントップをページネーションに付与
-              /* const swiper_inner = document.getElementsByClassName('top-keyvisual-carousel__inner'); */
-              /* swiper_inner[0].style.height = swiper_item[swiperPageNum + 1].children[0].clientHeight + 16 + 'px'; */
             }
           },
         },
@@ -247,8 +204,8 @@ window.addEventListener('load', function () {
             }
           }
         }
-        lastScrollPosition = window.scrollY; // 最後のスクロール位置を更新
-      }, 66) // 66ms間隔で実行
+        lastScrollPosition = window.scrollY;
+      }, 66)
     );
 
       // モーダル
