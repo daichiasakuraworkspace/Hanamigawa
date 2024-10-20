@@ -53,24 +53,188 @@
                 <section class="section">
                     <div class="section__inner">
                         <h2 class="section-h2__title">概要</h2>
-                        <p class="section__text">基本的に「section」で囲ってもらいます。「margin-top:55px」が付きます。</p>
+                        <p class="section__text">基本的に「section」で囲ってください。。「margin-top:55px」が付きます。</p>
                     </div>
                 </section>
                 <section class="section">
                     <div class="section__inner">
                     <h2 class="section-h2__title">モジュール</h2>
-                    <p class="section__text">基本的に「section」で囲ってもらいます。「margin-top:55px」が付きます。</p>
-                    <h1 class="content__title">h1タイトル</h1>
-                    <div>
-                        <pre>
-                            <code>
-                                <h1 class="content__title">h1タイトル</h1>
-                            </code>
-                           </pre>
-                           
+                    <div class="anchor-wrap">
+                        <a href="#sec01" tabindex="200" class="section__link section__anchor">タイトル</a>
+                        <a href="#sec02" tabindex="200" class="section__link section__anchor">テキスト</a>
+                        <a href="#sec03" tabindex="200" class="section__link section__anchor">リンク</a>
+                        <a href="#sec04" tabindex="200" class="section__link section__anchor">リスト</a>
+                        <a href="#sec05" tabindex="200" class="section__link section__anchor">画像</a>
+                        <a href="#sec06" tabindex="200" class="section__link section__anchor">ボタン</a>
+                        <a href="#sec07" tabindex="200" class="section__link section__anchor">タブ</a>
+                        <a href="#sec08" tabindex="200" class="section__link section__anchor">カラム</a>
                     </div>
-                    <h2 class="section-h2__title">h2タイトル</h2>
-                    <h3 class="section-h3__title">h3タイトル</h3>
+                    <div id="sec01" class="module-item">
+                        <h3 class="section-h3__title">・タイトル</h3>
+                        <h1 class="content__title">h1タイトル</h1>
+                        <h2 class="section-h2__title">h2タイトル</h2>
+                        <h3 class="section-h3__title">h3タイトル</h3>
+                    </div>
+                    <div id="sec02" class="module-item">
+                    <h3 class="section-h3__title">・テキスト</h3>
+                        <p class="section__text">テキストテキストテキストテキストテキスト<span class="section__text-bold">テキストテキストテキストテキストテキスト</span></p>
+                    </div>
+                    <div id="sec03" class="module-item">
+                    <h3 class="section-h3__title">・リンク</h3>
+                        <p class="section__text section__text-bold">ノーマルリンク</p>
+                        <p class="section__text">テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク</a>テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク</a>テキストテキストテキストテキストテキスト</p>
+                        <p class="section__text section__text-bold">アンカーリンク</p>
+                        <p class="section__text">テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link section__anchor">アンカーリンク</a>テキストテキストテキストテキストテキスト</p>
+                        <div class="anchor-wrap">
+                            <a href="#" tabindex="200" class="section__link section__anchor">アンカーリンク01</a>
+                            <a href="#" tabindex="200" class="section__link section__anchor">アンカーリンク02</a>
+                            <a href="#" tabindex="200" class="section__link section__anchor">アンカーリンク03</a>
+                        </div>
+                        <p class="section__text section__text-bold">電話リンク</p>
+                        <p class="section__text">テキストテキストテキストテキストテキスト<a class="section__link--tel section__link" href="tel:0123456789" tabindex="200">012-345-6789</a>テキストテキストテキストテキストテキスト</p>
+                    </div>
+                    <div id="sec04" class="module-item">
+                        <h3 class="section-h3__title">・リスト</h3>
+                        <p class="section__text section__text-bold">ノーマル</p>
+                        <ul class="section__list">
+                            <li class="section__list-item"><p class="section__text">テキストテキストテキ<a href="#" tabindex="200" class="section__link">内部リンク内部リンク</a>ストテキストテキスト</p></li>
+                            <li class="section__list-item"><a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク外部リンク</a></li>
+                        </ul>
+                        <p class="section__text section__text-bold">注釈</p>
+                        <ul class="section__list">
+                            <li class="section__list-annotation"><span>&#8251;</span>テキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク内部リンク</a>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
+                            <li class="section__list-annotation"><span>&#8251;</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
+                        </ul>
+                        <p class="section__text section__text-bold">番号</p>
+                        <ol class="section__list">
+                            <li class="section__list-number"><span>1.</span>テキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク内部リンク</a>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
+                            <li class="section__list-number"><span>2.</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
+                        </ol>
+                    </div>
+                    <div id="sec05" class="module-item">
+                        <h3 class="section-h3__title">・画像</h3>
+                        <p class="section__text section__text-bold">ノーマル</p>
+                        <div class="section__image-box">
+                            <img class="section__image" src="https://placehold.jp/950x400.png" alt="ダミー画像" />
+                        </div>
+                        <p class="section__text section__text-bold">PC・SPだし分け</p>
+                        <div class="section__image-box">
+                            <picture>
+                                <source media="(min-width: 767px)" srcset="https://placehold.jp/600x400.png">
+                                <img src="https://placehold.jp/300x200.png" alt="ダミー画像" class="aln-center">
+                            </picture>
+                        </div>
+                        <p class="section__text section__text-bold">モーダル</p>
+                        <div class="modal__image">
+                            <a href="https://placehold.jp/950x500.png" class="luminous">
+                                <img src="https://placehold.jp/600x400.png" alt="ダミー画像" class="aln-center">
+                            </a>     
+                        </div>
+                    </div>
+                    <div id="sec06" class="module-item">
+                        <h3 class="section-h3__title">・ボタン</h3>
+                        <p class="section__text section__text-bold">ノーマル</p>
+                        <div class="section__button-wrap">
+                            <a class="section__button" href="#" tabindex="200">テキストテキスト</a>
+                        </div>
+                        <p class="section__text section__text-bold">オレンジ色</p>
+                        <div class="section__button-wrap">
+                            <a class="section__button section__button--important" href="#" tabindex="200">テキストテキスト</a>
+                        </div>
+                        <p class="section__text section__text-bold">戻るボタン</p>
+                        <div class="section__button-wrap">
+                            <a class="section__button section__button--back" href="#" tabindex="200">テキストテキスト</a>
+                        </div>
+                    </div>
+                    <div id="sec07" class="module-item">
+                    <h3 class="section-h3__title">・タブ</h3>
+                        <div class="section__tab">
+                            <div class="section__tab-head">
+                                <ul class="section__tab-list">
+                                    <li class="section__tab-item is-active">
+                                        <button class="section__tab-item-inner js-tab-switch" data-tab="01" tabindex="200">A</button>
+                                    </li>
+                                    <li class="section__tab-item">
+                                        <button class="section__tab-item-inner js-tab-switch" data-tab="02" tabindex="200">B</button>
+                                    </li>
+                                    <li class="section__tab-item">
+                                        <button class="section__tab-item-inner js-tab-switch" data-tab="03" tabindex="200">C</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="section__tab-content">
+                                <div class="section__tab-body is-show" data-tab-panel="01">
+                                    <div class="search-tab">
+                                        <div class="search-tab__inner">
+                                            <div class="section__image-box">
+                                                <img class="aln-center" src="https://placehold.jp/700x300.png" width="700" alt="ダミー画像" />
+                                            </div>
+                                            <p class="section__text">Aエリアテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section__tab-body" data-tab-panel="02">
+                                    <div class="search-tab">
+                                        <div class="search-tab__inner">
+                                            <div class="section__image-box">
+                                                <img class="aln-center" src="https://placehold.jp/600x300.png" width="600" alt="ダミー画像" />
+                                                <p class="section__text">Bエリアテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section__tab-body" data-tab-panel="03">
+                                    <div class="search-tab">
+                                        <div class="search-tab__inner">
+                                            <div class="section__image-box">
+                                                <img class="aln-center" src="https://placehold.jp/500x300.png" width="500" alt="ダミー画像" />
+                                                <p class="section__text">Cエリアテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sec08" class="module-item">
+                        <h3 class="section-h3__title">・カラム</h3>
+                        <p class="section__text section__text-bold">2カラム</p>
+                        <div class="section__contents section__contents-column2">
+                            <div class="section__contents-item">
+                                <div class="section__image-box">
+                                    <img class="section__image" src="https://placehold.jp/470x300.png" alt="ダミー画像" />
+                                </div>
+                                <p class="section__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            </div>
+                            <div class="section__contents-item">
+                                <div class="section__image-box">
+                                    <img class="section__image" src="https://placehold.jp/470x300.png" alt="ダミー画像" />
+                                </div>
+                                <p class="section__text">テキストテキストテキストテキストテキスト</p>
+                            </div> 
+                        </div>
+                        <p class="section__text section__text-bold">3カラム</p>
+                        <div class="section__contents section__contents-column3">
+                            <div class="section__contents-item">
+                                <div class="section__image-box">
+                                    <img class="section__image" src="https://placehold.jp/300x200.png" alt="ダミー画像" />
+                                </div>
+                                <p class="section__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            </div>
+                            <div class="section__contents-item">
+                                <div class="section__image-box">
+                                    <img class="section__image" src="https://placehold.jp/300x200.png" alt="ダミー画像" />
+                                </div>
+                                <p class="section__text">テキストテキストテキストテキストテキスト</p>
+                            </div>
+                            <div class="section__contents-item">
+                                <div class="section__image-box">
+                                    <img class="section__image" src="https://placehold.jp/300x200.png" alt="ダミー画像" />
+                                </div>
+                                <p class="section__text">テキストテキストテキストテキストテキスト</p>
+                            </div> 
+                        </div>
+                    </div>
                     </div>
                 </section>
                 <section class="section">
@@ -79,49 +243,28 @@
                            <ul class="shop-info__wrap">
                             <li class="shop-info-item">
                                 <div class="shop-info-item__head">住所</div>
-                                <div class="shop-info-item___guide"><p class="shop-info-item___text">〒000-0000 千葉市花見川区花見川2-42-106</p></div>
+                                <div class="shop-info-item___guide"><p class="shop-info-item___text">〒000-0000 千葉市花見川区花見川</p></div>
                             </li>
                             <li class="shop-info-item">
                                 <div class="shop-info-item__head">TEL</div>
-                                <div class="shop-info-item___guide"><a class="section__link--tel shop-info-item__link" href="tel:0432596939" tabindex="200">043-259-6939</a></div>
+                                <div class="shop-info-item___guide"><a class="section__link--tel shop-info-item__link" href="tel:0123456789" tabindex="200">012-345-6789</a></div>
                             </li>
                             <li class="shop-info-item">
                                 <div class="shop-info-item__head">主な取扱商品</div>
                                 <div class="shop-info-item___guide">
                                     <ul class="section__list">
                                         <li class="section__list-item"><p class="shop-info-item___text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p></li>
-                                        <li class="section__list-item"><p class="shop-info-item___text">テキストテキストテキ<a href="" tabindex="200" class="shop-info-item__link">テキストテキストテキストテキストテキスト</a>ストテキストテキスト</p></li>
-                                        <li class="section__list-item"><a href="" tabindex="200" class="shop-info-item__link section__link--blank" target="_blank">テキストテキストテキストテキストテキスト</a></li>
+                                        <li class="section__list-item"><p class="shop-info-item___text">テキストテキスト<a href="#" tabindex="200" class="shop-info-item__link">テキストテキストテキストテキストテキスト</a>ストテキストテキスト</p></li>
+                                        <li class="section__list-item"><a href="#" tabindex="200" class="shop-info-item__link section__link--blank" target="_blank">テキストテキストテキストテキストテキスト</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="shop-info-item">
                                 <div class="shop-info-item__head">SNS</div>
-                                <div class="shop-info-item___guide"><a href="https://www.instagram.com/nakaya.fruits/" tabindex="200" target="_blank" class="shop-info-item__link">Instagram</a><br class="sp-only"><a href="" tabindex="200" class="shop-info-item__link">YouTube</a></div>
+                                <div class="shop-info-item___guide"><a href="#" tabindex="200" target="_blank" class="shop-info-item__link">Instagram</a><br class="sp-only"><a href="#" tabindex="200" class="shop-info-item__link">YouTube</a></div>
                             </li>
                            </ul>
                         </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="section__inner">
-                        <div class="section__image-box">
-                            <img class="section__image" src="https://placehold.jp/950x400.png" alt="商店街の様子" />
-                        </div>
-                        <p class="section__text">商店街の周辺には、<a href="" tabindex="200" class="section__link" target="_blank">保育園</a>、幼稚園が9ヶ所、小学校4校、<a href="" tabindex="200" class="section__link section__link--blank" target="_blank">中学校2校</a>があり、お子様を育てる上では最適な環境です。交番も商店街から50m以内の所にあり、いざという時も安心です。</p>
-                        <p class="section__text">商店街は歩行者天国になっており、<span class="section__text-bold">街角花いっぱい運動などで1年中花が溢れております。</span></p>
-                        <ul class="section__list">
-                            <li class="section__list-item"><p class="section___text">テキストテキストテキ<a href="" tabindex="200" class="section__link">テキストテキストテキストテキストテキスト</a>ストテキストテキスト</p></li>
-                            <li class="section__list-item"><a href="" tabindex="200" class="section__link section__link--blank" target="_blank">テキストテキストテキストテキストテキスト</a></li>
-                        </ul>
-                        <ul class="section__list">
-                            <li class="section__list-annotation"><span>&#8251;</span>テキストテキスト<a href="" tabindex="200" class="section__link">テキストテキストテキストテキストテキスト</a>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
-                            <li class="section__list-annotation"><span>&#8251;</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
-                        </ul>
-                        <ol class="section__list">
-                            <li class="section__list-number"><span>1.</span>テキストテキスト<a href="" tabindex="200" class="section__link">テキストテキストテキストテキストテキスト</a>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
-                            <li class="section__list-number"><span>2.</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
-                        </ol>
                     </div>
                 </section>
         </article>
