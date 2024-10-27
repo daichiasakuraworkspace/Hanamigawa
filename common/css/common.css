@@ -1057,6 +1057,10 @@ img{
   margin-top: 30px;
 }
 
+.section__image-box img{
+  max-width: 100%;
+}
+
 .section__inner > :first-child , .news__inner > :first-child, .search__inner > :first-child , .category__inner > :first-child{
   margin-top: 0;
 }
