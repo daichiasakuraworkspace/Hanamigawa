@@ -36,14 +36,15 @@ img{
   font-weight: 700;
 }
 .pagetop{
-  bottom: -65px;
+  bottom: 10px;
+  opacity: 0;
   position: fixed;
   right: 20%;
-  transition: bottom 0.15s ease-out;
+  transition: 0.5s ease-out;
   z-index: 51;
 }
 .pagetop.is-show{
-  bottom: 10px;
+  opacity: 1;
 }
 .pagetop-btn img{
   width: 65px;
@@ -1184,9 +1185,27 @@ img{
 .section__contents-item > :first-child{
   margin-top: 0;
 }
+.luminous{
+  display: inline-block;
+}
 /* module */
 .module-item{
   margin-top: 55px;
+}
+code {
+  color: #404040;
+  font-size: 0.9em;
+}
+pre {
+  padding: 1em;
+  margin: 0 0 1.5em;
+  border: solid 1px #eaedf2;
+  background: #f3f6fc;
+  color: #54687c;
+  white-space: pre-wrap;
+}
+summary:hover{
+  cursor: pointer;
 }
 @media screen and (max-width: 767px) {
   img{
