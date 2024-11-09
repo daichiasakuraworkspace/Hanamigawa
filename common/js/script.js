@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
   // タブ切り替え
   {
     const tabMenu = document.querySelectorAll('.js-tab-switch');
@@ -30,25 +29,23 @@ document.addEventListener('DOMContentLoaded', function () {
       tabMenu[i].addEventListener('click', tabSwitch);
     }
   }
-  // アンカーリンクのスムーズスクロール処理
+  //スムーズスクロール
   {
-    const anchorLinks = document.querySelectorAll('[href^="#"]:not(.js-noscroll)');
-    let headHeight = 118;
+    const anchorLinks = document.querySelectorAll('[href^="#"]');
+    let headHeight = 110;
     if (document.querySelector('.header')) {
       headHeight = document.querySelector('.header').getBoundingClientRect().height;
     }
     anchorLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
-        // クリック直前にハッシュ値がなくなっていないか
         if (link.hash == '' || link.hash == null) {
           return;
         }
-        // スクロール先の要素を取得
+        
         const targetElement = document.querySelector(link.hash);
         if (targetElement == '' || targetElement == null) {
           return;
         }
-        event.preventDefault();
 
         // スクロール先の位置を取得
         const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
@@ -56,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentPosition = window.scrollY;
         const distance = targetPosition - currentPosition;
         // スクロールを開始
-        const duration = 500; // スクロールの時間（ミリ秒）
+        const duration = 500;
         const startTime = performance.now();
         window.requestAnimationFrame(function scroll(time) {
           const timePassed = time - startTime;
@@ -74,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-
 });
 
 window.addEventListener('load', function () {
@@ -93,12 +89,10 @@ window.addEventListener('load', function () {
    const spMenuClose = document.querySelector('.js-menu-close-sp');
    if (spMenuClose) {
      spMenuClose.addEventListener('click', function () {
-       /* コンテンツフェードアウト後にメニューを閉じる */
          spMenuBody.classList.remove('is-open');
          spBody.style.overflow = null;
      });
    }
-   /* end:SPハンバーガーメニュー開閉 */
   // KVカルーセルのswiperの処理
   {
     const top_swiperElm = document.querySelectorAll('.js-swiper-top-keyvisual');
@@ -107,7 +101,6 @@ window.addEventListener('load', function () {
         slidesPerView: 'auto',
         spaceBetween: 30,
         breakpoints: {
-          // 768px以上の場合
           768: {
             spaceBetween: 60,
           },
@@ -116,7 +109,6 @@ window.addEventListener('load', function () {
           el: '.top-keyvisual-carousel__pagination',
           clickable: true,
         },
-        // ナビボタンが必要なら追加
         navigation: {
           nextEl: '.top-keyvisual-carousel__button-next',
           prevEl: '.top-keyvisual-carousel__button-prev',
@@ -129,7 +121,6 @@ window.addEventListener('load', function () {
           disableOnInteraction: false,
         },
         on: {
-          // スライドの切り替わりアニメーションが終了した時に実行
           slideChangeTransitionEnd: function () {
             if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
               const swiperPageNum = this.realIndex;
@@ -169,7 +160,6 @@ window.addEventListener('load', function () {
         observeParents: true,
         spaceBetween: 15,
         breakpoints: {
-          // 768px以上の場合
           768: {
             spaceBetween: 42,
           },
@@ -178,7 +168,6 @@ window.addEventListener('load', function () {
           el: '.shop-about-carousel__pagination',
           clickable: true,
         },
-        // ナビボタンが必要なら追加
         navigation: {
           nextEl: '.shop-about-carousel__button-next',
           prevEl: '.shop-about-carousel__button-prev',
@@ -208,8 +197,7 @@ window.addEventListener('load', function () {
     }
   }
     const pagetopArea = document.querySelector('.pagetop');
-    // 1画面分下スクロールでページトップボタン表示
-    let lastScrollPosition = window.scrollY; // 最後のスクロール位置を保存
+    let lastScrollPosition = window.scrollY;
     const throttle = function (fn, interval) {
       let lastTime = Date.now() - interval;
       return function () {
@@ -225,17 +213,13 @@ window.addEventListener('load', function () {
         const viewportHeight = window.innerHeight;
         const currentScrollPosition = window.scrollY;
         if (currentScrollPosition > lastScrollPosition) {
-          /* 下スクロール */
           if (currentScrollPosition >= viewportHeight) {
-            // 1画面スクロールで表示
             if (pagetopArea) {
               pagetopArea.classList.add('is-show');
             }
           }
         } else {
-          /* 上スクロール */
           if (currentScrollPosition < viewportHeight) {
-            // 1画面分未満スクロールで非表示
             if (pagetopArea) {
               pagetopArea.classList.remove('is-show');
             }
