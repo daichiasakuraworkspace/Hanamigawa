@@ -56,7 +56,7 @@
 <section class="section">
 <div class="section__inner">
 <h2 class="section-h2__title">モジュール</h2>
-<div class="anchor-wrap">
+<div class="anchor-wrap anchor-wrap--pc-column6 anchor-wrap--sp-column2">
 <a href="#sec01" tabindex="200" class="section__anchor-item">タイトル</a>
 <a href="#sec02" tabindex="200" class="section__anchor-item">テキスト</a>
 <a href="#sec03" tabindex="200" class="section__anchor-item">リンク</a>
@@ -65,7 +65,8 @@
 <a href="#sec06" tabindex="200" class="section__anchor-item">ボタン</a>
 <a href="#sec07" tabindex="200" class="section__anchor-item">タブ</a>
 <a href="#sec08" tabindex="200" class="section__anchor-item">カラム</a>
-<a href="#sec09" tabindex="200" class="section__anchor-item">店舗詳細</a>
+<a href="#sec09" tabindex="200" class="section__anchor-item">テーブル</a>
+<a href="#sec10" tabindex="200" class="section__anchor-item">店舗詳細</a>
 </div>
 <div id="sec01" class="module-item">
 <h3 class="section-h3__title">・タイトル</h3>
@@ -127,18 +128,55 @@
 <summary>コード</summary>
 <pre><code>&lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__anchor&quot;&gt;アンカーリンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;</code></pre>
 </details>
-<div class="anchor-wrap">
+<div class="anchor-wrap anchor-wrap--pc-column3 anchor-wrap--sp-column1">
 <a href="#" tabindex="200" class="section__anchor-item">アンカーリンク01</a>
 <a href="#" tabindex="200" class="section__anchor-item">アンカーリンク02</a>
 <a href="#" tabindex="200" class="section__anchor-item">アンカーリンク03</a>
 </div>
 <details>
 <summary>コード</summary>
-<pre><code>&lt;div class=&quot;anchor-wrap&quot;&gt;
+<pre><code>&lt;div class=&quot;anchor-wrap anchor-wrap--pc-column3 anchor-wrap--sp-column1&quot;&gt;
     &lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__anchor-item&quot;&gt;アンカーリンク01&lt;/a&gt;
     &lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__anchor-item&quot;&gt;アンカーリンク02&lt;/a&gt;
     &lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__anchor-item&quot;&gt;アンカーリンク03&lt;/a&gt;
 &lt;/div&gt;</code></pre>
+</details>
+<details>
+<summary>リンク幅調整クラス</summary>
+<div class="section__table-box">
+<table class="section__table">
+<tbody class="section__table-body">
+<tr class="section__table-row">
+<th class="section__table-head section__table--w50">クラス名</th>
+<th class="section__table-head section__table--w50">カラム</th>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">anchor-wrap--column2</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">2カラム</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">anchor-wrap--column3</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">3カラム</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">anchor-wrap--column4</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">4カラム</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </details>
 <p class="section__text"><span class="section__text-bold">電話リンク</span><br>SP時のみ電話番号がリンクになる</p>
 <p class="section__text">テキストテキストテキストテキストテキスト<a class="section__link--tel section__link" href="tel:0123456789" tabindex="200">012-345-6789</a>テキストテキストテキストテキストテキスト</p>
@@ -211,7 +249,7 @@
     &lt;picture&gt;
         &lt;source media=&quot;(min-width: 767px)&quot; srcset=&quot;https://placehold.jp/600x400.png&quot;&gt;
             &lt;img src=&quot;https://placehold.jp/300x200.png&quot; alt=&quot;ダミー画像&quot; class=&quot;aln-center&quot;&gt;
-        &lt;/picture&gt;
+    &lt;/picture&gt;
 &lt;/div&gt;</code></pre>
 </details>
 <p class="section__text section__text-bold">モーダル</p>
@@ -247,7 +285,7 @@
 </div>
 <details>
 <summary>コード</summary>
-<pre><code>&lt;div class=&quot;section__button-wrap &quot;&gt;
+<pre><code>&lt;div class=&quot;section__button-wrap&quot;&gt;
     &lt;a class=&quot;section__button section__button--important&quot; href=&quot;#&quot; tabindex=&quot;200&quot;&gt;テキストテキスト&lt;/a&gt;
 &lt;/div&gt;</code></pre>
 </details>
@@ -257,7 +295,7 @@
 </div>
 <details>
 <summary>コード</summary>
-<pre><code>&lt;div class=&quot;section__button-wrap &quot;&gt;
+<pre><code>&lt;div class=&quot;section__button-wrap&quot;&gt;
     &lt;a class=&quot;section__button section__button--back&quot; href=&quot;#&quot; tabindex=&quot;200&quot;&gt;テキストテキスト&lt;/a&gt;
 &lt;/div&gt;</code></pre>
 </details>
@@ -440,6 +478,214 @@
 </details>
 </div>
 <div id="sec09" class="module-item">
+<h3 class="section-h3__title">・テーブル</h3>
+<p class="section__text section__text-bold">ノーマル</p>
+<div class="section__table-box">
+<table class="section__table">
+<tbody class="section__table-body">
+<tr class="section__table-row">
+<th class="section__table-head section__table--w20"></th>
+<th class="section__table-head">タイトル</th>
+<th class="section__table-head">タイトル</th>
+</tr>
+<tr class="section__table-row">
+<th class="section__table-head">タイトル</th>
+<td class="section__table-field">
+<p class="section__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<ul class="section__list">
+<li class="section__list-item"><p class="section__text">テキストテキストテキ<a href="#" tabindex="200" class="section__link">内部リンク内部リンク</a>ストテキストテキスト</p></li>
+<li class="section__list-item"><a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク外部リンク</a></li>
+</ul>
+</td>
+<td class="section__table-field">
+<div class="section__image-box">
+<img class="section__image" src="https://placehold.jp/950x400.png" alt="ダミー画像" />
+</div>
+<p class="section__text">テキストテキストテキストテキストテキスト</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<th class="section__table-head">タイトル</th>
+<td class="section__table-field">
+<p class="section__text">テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク</a>テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク</a>テキストテキストテキストテキストテキスト</p>
+</td>
+<td class="section__table-field">
+<p class="section__text">テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク</a>テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク</a>テキストテキストテキストテキストテキスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details>
+<summary>コード</summary>
+<pre><code>&lt;div class=&quot;section__table-box&quot;&gt;
+    &lt;table class=&quot;section__table&quot;&gt;
+        &lt;tbody class=&quot;section__table-body&quot;&gt;
+            &lt;tr class=&quot;section__table-row&quot;&gt;
+                &lt;th class=&quot;section__table-head section__table--w20&quot;&gt;&lt;/th&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;section__table-row&quot;&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+                    &lt;ul class=&quot;section__list&quot;&gt;
+                        &lt;li class=&quot;section__list-item&quot;&gt;&lt;p class=&quot;section__text&quot;&gt;テキストテキストテキ&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link&quot;&gt;内部リンク内部リンク&lt;/a&gt;ストテキストテキスト&lt;/p&gt;&lt;/li&gt;
+                        &lt;li class=&quot;section__list-item&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__link--blank&quot; target=&quot;_blank&quot;&gt;外部リンク外部リンク&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/td&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;div class=&quot;section__image-box&quot;&gt;
+                        &lt;img class=&quot;section__image&quot; src=&quot;https://placehold.jp/950x400.png&quot; alt=&quot;ダミー画像&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;section__table-row&quot;&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link&quot;&gt;内部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__link--blank&quot; target=&quot;_blank&quot;&gt;外部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;
+                &lt;/td&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link&quot;&gt;内部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__link--blank&quot; target=&quot;_blank&quot;&gt;外部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+</details>
+<details>
+<summary>テーブル幅調整のクラス名一覧</summary>
+<div class="section__table-box">
+<table class="section__table">
+<tbody class="section__table-body">
+<tr class="section__table-row">
+<th class="section__table-head section__table--w50">クラス名</th>
+<th class="section__table-head section__table--w50">テーブル幅</th>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">section__table--w10</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">width: 10%</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">section__table--w20</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">width: 20%</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">section__table--w25</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">width: 25%</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">section__table--w30</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">width: 30%</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<td class="section__table-field aln-center">
+<p class="section__text">section__table--w50</p>
+</td>
+<td class="section__table-field aln-center">
+<p class="section__text">width: 50%</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<p class="section__text section__text-bold">950px以下スクロール</p>
+<div class="section__table-box section__table-box--scroll">
+<table class="section__table">
+<tbody class="section__table-body">
+<tr class="section__table-row">
+<th class="section__table-head section__table--w20"></th>
+<th class="section__table-head">タイトル</th>
+<th class="section__table-head">タイトル</th>
+</tr>
+<tr class="section__table-row">
+<th class="section__table-head">タイトル</th>
+<td class="section__table-field">
+<p class="section__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<ul class="section__list">
+<li class="section__list-item"><p class="section__text">テキストテキストテキ<a href="#" tabindex="200" class="section__link">内部リンク内部リンク</a>ストテキストテキスト</p></li>
+<li class="section__list-item"><a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク外部リンク</a></li>
+</ul>
+</td>
+<td class="section__table-field">
+<div class="section__image-box">
+<img class="section__image" src="https://placehold.jp/950x400.png" alt="ダミー画像" />
+</div>
+<p class="section__text">テキストテキストテキストテキストテキスト</p>
+</td>
+</tr>
+<tr class="section__table-row">
+<th class="section__table-head">タイトル</th>
+<td class="section__table-field">
+<p class="section__text">テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク</a>テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク</a>テキストテキストテキストテキストテキスト</p>
+</td>
+<td class="section__table-field">
+<p class="section__text">テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link">内部リンク</a>テキストテキストテキストテキストテキスト<a href="#" tabindex="200" class="section__link section__link--blank" target="_blank">外部リンク</a>テキストテキストテキストテキストテキスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details>
+<summary>コード</summary>
+<pre><code>&lt;div class=&quot;section__table-box section__table-box--scroll&quot;&gt;
+    &lt;table class=&quot;section__table&quot;&gt;
+        &lt;tbody class=&quot;section__table-body&quot;&gt;
+            &lt;tr class=&quot;section__table-row&quot;&gt;
+                &lt;th class=&quot;section__table-head section__table--w20&quot;&gt;&lt;/th&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;section__table-row&quot;&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+                    &lt;ul class=&quot;section__list&quot;&gt;
+                        &lt;li class=&quot;section__list-item&quot;&gt;&lt;p class=&quot;section__text&quot;&gt;テキストテキストテキ&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link&quot;&gt;内部リンク内部リンク&lt;/a&gt;ストテキストテキスト&lt;/p&gt;&lt;/li&gt;
+                        &lt;li class=&quot;section__list-item&quot;&gt;&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__link--blank&quot; target=&quot;_blank&quot;&gt;外部リンク外部リンク&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/td&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;div class=&quot;section__image-box&quot;&gt;
+                        &lt;img class=&quot;section__image&quot; src=&quot;https://placehold.jp/950x400.png&quot; alt=&quot;ダミー画像&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;section__table-row&quot;&gt;
+                &lt;th class=&quot;section__table-head&quot;&gt;タイトル&lt;/th&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link&quot;&gt;内部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__link--blank&quot; target=&quot;_blank&quot;&gt;外部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;
+                &lt;/td&gt;
+                &lt;td class=&quot;section__table-field&quot;&gt;
+                    &lt;p class=&quot;section__text&quot;&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link&quot;&gt;内部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;a href=&quot;#&quot; tabindex=&quot;200&quot; class=&quot;section__link section__link--blank&quot; target=&quot;_blank&quot;&gt;外部リンク&lt;/a&gt;テキストテキストテキストテキストテキスト&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+</details>
+</div>
+<div id="sec10" class="module-item">
 <h3 class="section-h3__title">・店舗詳細</h3>
 <div class="shop-info">
 <div class="shop-info__inner">
@@ -477,8 +723,8 @@
             &lt;li class=&quot;shop-info-item&quot;&gt;
                 &lt;div class=&quot;shop-info-item__head&quot;&gt;住所&lt;/div&gt;
                 &lt;div class=&quot;shop-info-item___guide&quot;&gt;
-                    &lt;p class=&quot;shop-info-item___text&quot;&gt;〒000-0000 千葉市花見川区花見川&lt;/p&gt
-                ;&lt;/div&gt;
+                    &lt;p class=&quot;shop-info-item___text&quot;&gt;〒000-0000 千葉市花見川区花見川&lt;/p&gt;
+                &lt;/div&gt;
             &lt;/li&gt;
             &lt;li class=&quot;shop-info-item&quot;&gt;
                 &lt;div class=&quot;shop-info-item__head&quot;&gt;TEL&lt;/div&gt;
