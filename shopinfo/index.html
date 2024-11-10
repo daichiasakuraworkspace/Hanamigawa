@@ -119,9 +119,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <article>
             <h1 class="hidden">お店を探す</h1>
             <section class="section">
+                <div class="section__inner">
+                    <div class="anchor-wrap anchor-wrap--pc-column2 anchor-wrap--sp-column1">
+                        <a href="#category" tabindex="200" class="section__anchor-item">カテゴリーからお店を探す</a>
+                        <a href="#map" tabindex="200" class="section__anchor-item">地図からお店を探す</a>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
                 <div class="category">
                     <div class="category__inner">
-                        <h2 class="section-h2__title aln-center">カテゴリーからお店を探す</h2>
+                        <h2 class="section-h2__title aln-center" id="category">カテゴリーからお店を探す</h2>
                         <div class="category-wrap">
                             <div class="category-content">
                                 <a href="/shop/index.html#shopping" tabindex="200" class="category__link">
@@ -172,16 +180,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </a>
                             </div>
                         </div>
-                        <div class="section__button-wrap">
-                            <a class="section__button section__button--important aln-center" href="/shop/neighbourhood/index.html" tabindex="200">近隣の施設へ</a>
-                        </div>
                     </div>
                 </div>
             </section>
                 <section class="section">
                     <div class="search">
                         <div class="search__inner">
-                            <h2 class="section-h2__title aln-center">地図からお店を探す</h2>
+                            <h2 class="section-h2__title aln-center" id="map">地図からお店を探す</h2>
                             <div class="modal__image aln-center">
                                 <a href="/common/images/img_map_whole_f.jpg" class="luminous">
                                     <img src="/common/images/img_map_whole.jpg" alt="花見川団地商店街地図" width="600" class="aln-center">
@@ -212,31 +217,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                     <li class="search-tab__item">
                                                         <div class="search-tab__item-content">
                                                             <p class="search-tab__item-number">101</p>
-                                                            <div class="search-tab__item-name"><p class="search-tab__text">佐川急便</p></div>
+                                                            <div class="search-tab__item-name"><p class="search-tab__text">運送業者</p></div>
                                                         </div>
                                                     </li>
                                                     <li class="search-tab__item">
                                                         <div class="search-tab__item-content">
                                                             <p class="search-tab__item-number">102</p>
-                                                            <div class="search-tab__item-name"><img src="/common/images/logo_a_01.jpg" alt="ビューティ野口"></div>
+                                                            <div class="search-tab__item-name"><p class="search-tab__text">美容院</p></div>
                                                         </div>
                                                     </li>
                                                     <li class="search-tab__item">
-                                                        <div class="search-tab__item-content">
-                                                            <p class="search-tab__item-number">103</p>
-                                                            <div class="search-tab__item-name"><img src="/common/images/logo_wakaba.jpg" alt="HAIR MODE SALON わかば"></div>
-                                                        </div>
-                                                    </li>
+                                                        <a href="/shop/wakaba/index.html" tabindex="200" class="search-tab__item-content">
+                                                        <p class="search-tab__item-number">103</p>
+                                                        <div class="search-tab__item-name"><img src="/common/images/logo_wakaba.jpg" alt="わかば理容"></div>
+                                                        </a>
+                                                        </li>
                                                     <li class="search-tab__item">
                                                         <div class="search-tab__item-content">
                                                             <p class="search-tab__item-number">104</p>
-                                                            <div class="search-tab__item-name"><img src="/common/images/logo_a_03.jpg" alt="中華物産店 花見"></div>
+                                                            <div class="search-tab__item-name"><p class="search-tab__text">食材店</p></div>
                                                         </div>
                                                     </li>
                                                     <li class="search-tab__item">
                                                         <div class="search-tab__item-content">
                                                             <p class="search-tab__item-number">105</p>
-                                                            <div class="search-tab__item-name"><p class="search-tab__text">とり一番</p></div>
+                                                            <div class="search-tab__item-name"><p class="search-tab__text">配送弁当</p></div>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -528,8 +533,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
+                    </div>
+                    <div class="section__button-wrap">
+                        <a class="section__button section__button--important aln-center" href="/shop/neighbourhood/index.html" tabindex="200">近隣の施設へ</a>
                     </div>
                 </section>
         </article>
