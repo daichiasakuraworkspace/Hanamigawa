@@ -194,7 +194,7 @@ window.addEventListener('load', function () {
           }
         });
       }
-    } else{
+    } else if (swiperElm.length == 1){
       const swiper = new Swiper('.js-swiper-shop-about', {
         loop: false, 
         autoplay: false,
