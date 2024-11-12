@@ -152,8 +152,8 @@ window.addEventListener('load', function () {
 
   // 店舗詳細のswiperの処理
   {
-    const swiperElm = document.querySelectorAll('.js-swiper-shop-about');
-    if (swiperElm.length) {
+    const swiperElm = document.querySelectorAll('.js-swiper-shop-about .swiper-slide');
+    if (swiperElm.length > 1) {
       const swiper = new Swiper('.js-swiper-shop-about', {
         slidesPerView: 'auto',
         observer: true,
@@ -194,6 +194,13 @@ window.addEventListener('load', function () {
           }
         });
       }
+    } else{
+      const swiper = new Swiper('.js-swiper-shop-about', {
+        loop: false, 
+        autoplay: false,
+      });
+      const swiperBtn = document.querySelectorAll('.shop-about-carousel__page');
+      swiperBtn[0].classList.add('btn-none');
     }
   }
     const pagetopArea = document.querySelector('.pagetop');

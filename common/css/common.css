@@ -759,6 +759,10 @@ img{
   width: 50px;
   top: 45%;
 }
+.shop-about-carousel__page.btn-none .shop-about-carousel__button-prev, 
+.shop-about-carousel__page.btn-none .shop-about-carousel__button-next{
+  display: none;
+}
 .shop-about-carousel__button-prev::after,
 .shop-about-carousel__button-next::after {
   display: block;
@@ -777,6 +781,9 @@ img{
   display: flex;
   transition: margin 0.5s ease-out;
   justify-content: center;
+}
+.shop-about-carousel__page.btn-none {
+  display: none;
 }
 .shop-about-carousel__button-pouse {
   background: url(/common/images/orange_stop_icon.png) no-repeat;
@@ -847,6 +854,7 @@ img{
 
 .shop-info-item___guide{
   width: 100%;
+  font-size: 1.4rem;
 }
 
 .shop-info-item___guide > :first-child{
