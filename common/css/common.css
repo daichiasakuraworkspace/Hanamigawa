@@ -1088,6 +1088,10 @@ img{
   width: 100%;
 }
 
+.section__image--radius{
+  border-radius: 8px;
+}
+
 .section__text{
   margin-top: 15px;
   line-height: 1.6;
