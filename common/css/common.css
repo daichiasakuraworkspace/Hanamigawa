@@ -1393,6 +1393,24 @@ pre {
 summary:hover{
   cursor: pointer;
 }
+@media screen and (max-width: 950px){
+  .header__pc-content{
+    width: 750px;
+  }
+  .header__pc-menu-list{
+    gap: 15px;
+  }
+  .header__pc-menu-btn{
+    font-size: 1.3rem;
+  }
+  .footer-menu{
+    max-width: 750px;
+  }
+  .section > div ,.top-section > div,.content__title{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
 @media screen and (max-width: 767px) {
   img{
     width: 100%;
@@ -1405,10 +1423,6 @@ summary:hover{
   }
   .section{
     margin-top: 35px;
-  }
-  .section > div ,.top-section > div{
-    padding-left: 5%;
-    padding-right: 5%;
   }
   .pagetop{
     right: 16px;
