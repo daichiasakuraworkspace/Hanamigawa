@@ -1,0 +1,623 @@
+@charset "UTF-8";
+
+    /*インスタグラム画像　ボタンの形状*/
+    .float_insta {
+        margin-top: 3%;
+        display: flex;
+        text-decoration: none;
+        outline: none;
+        transition: all .3s;
+    }
+
+    .float_insta :hover {
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
+        border-color: transparent;
+    }
+
+/* スマホ表示 */
+@media (max-width: 959px){
+
+    * {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2, h3, p {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    /* pc表示部分削除 */
+
+    .header {
+        display: none;
+    }
+
+    .header_logo {
+        display: none;
+    }
+
+    .main_pc {
+        display: none;
+    }
+
+    .map_pc {
+        display: none;
+    }
+
+    .access_pc {
+        display: none;
+    }
+
+    .slider {
+        display: none;
+    }
+
+    /* header */
+
+    .header_logo_sp {
+        height: 70px;
+        width: 70px;
+    }
+
+    .header_sp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 22px;
+        margin: 0;
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 100px;
+    }
+
+    .contents_img {
+        width: 70%;
+        display: block;
+        margin: auto;
+    }
+
+    /* main */
+
+    .main_visual {
+        padding-top: 0;
+        margin-top: 0;
+        height: 100vh;
+        background-image: url(../images/egao_open_4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .main_sp {
+        z-index: 999;
+    }    
+
+    .main_sp p {
+        padding-top: 400px;
+        line-height: 50px;
+        letter-spacing: 0.2em;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    /* section全体 */
+
+    .section {
+        padding: 0 10px;
+    }
+
+    .section h2 {
+        padding: 80px 0 40px 0;
+        font-size: 1.6rem;
+    }
+
+    .sec_123 p {
+        text-align: center;
+    }
+
+    .sec_contents li {
+        padding-bottom: 60px;
+    }
+
+    /* sec_3 */
+
+    .sec_3 img {
+        width: 80%;
+        padding-left: 40px;
+    }
+
+    /* sec_4 */
+
+    .map_sp {
+        text-align: center;
+    }
+
+    .sec_4 p {
+        text-align: left;
+        padding: 0 50px;
+        line-height: 30px;
+    }
+
+    .access_sp {
+        text-align: center;
+        width: 80%;
+        padding: 20px 0 20px;
+    }
+
+    /* グロナビ */
+
+    #g-nav {
+        /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+        position:fixed;
+        z-index: 999;
+        /*ナビのスタート位置と形状*/
+        top:-120%;
+        left:0;
+        width:100%;
+        height: 100vh;/*ナビの高さ*/
+        background:#999;
+        /*動き*/
+        transition: all 0.6s;
+    }
+    
+    /*アクティブクラスがついたら位置を0に*/
+    #g-nav.panelactive {
+        top: 0;
+    }
+    
+    /*ナビゲーションの縦スクロール*/
+    #g-nav.panelactive #g-nav-list {
+        /*ナビの数が増えた場合縦スクロール*/
+        position: fixed;
+        z-index: 999; 
+        width: 100%;
+        height: 100vh;/*表示する高さ*/
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /*ナビゲーション*/
+    #g-nav ul {
+        /*ナビゲーション天地中央揃え*/
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    /*リストのレイアウト設定*/
+    #g-nav li {
+        list-style: none;
+        text-align: center; 
+    }
+    
+    #g-nav li a {
+        color: #fff;
+        text-decoration: none;
+        padding:10px;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+    }
+    
+    /*========= ボタンのためのCSS ===============*/
+    .openbtn {
+        position:fixed;
+        z-index: 9999;/*ボタンを最前面に*/
+        top:10px;
+        right: 10px;
+        cursor: pointer;
+        width: 50px;
+        height:50px;
+    }
+        
+    /*×に変化*/	
+    .openbtn span {
+        display: inline-block;
+        transition: all .4s;
+        position: absolute;
+        left: 14px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #ffffee;
+        width: 45%;
+    }
+    
+
+    .openbtn span.invert {
+        background-color: #333; /* スクロール後の色 */
+    }
+
+    .openbtn span:nth-of-type(1) {
+        top:15px;	
+    }
+    
+    .openbtn span:nth-of-type(2) {
+        top:23px;
+    }
+    
+    .openbtn span:nth-of-type(3) {
+        top:31px;
+    }
+    
+    .openbtn.active span:nth-of-type(1) {
+        top: 18px;
+        left: 18px;
+        transform: translateY(6px) rotate(-45deg);
+        width: 30%;
+    }
+    
+    .openbtn.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    
+    .openbtn.active span:nth-of-type(3){
+        top: 30px;
+        left: 18px;
+        transform: translateY(-6px) rotate(45deg);
+        width: 30%;
+    }
+
+    .g-nav-ri {
+        position: absolute;
+        z-index: 800;
+        top:90%;
+        left: auto;
+    }
+
+    .g-nav-ri p {
+        text-align: left;
+        padding-left: 10px;
+        padding-left: 10px;
+        color: #fff;
+    }
+
+    /* footer */
+
+    footer {
+        padding: 10px 10px 5px;
+    }
+
+    footer p{
+        text-align: left;
+    }
+}
+
+
+    /* pc表示 */
+
+@media (min-width: 960px) {
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .egao_body {
+        overflow: hidden;
+    }
+
+    ul{
+        margin:0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .header_sp {
+        display: none;
+    }
+
+    .access_sp {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 200;
+        top: 0;
+        width: 1900px;
+        height: 170px;
+    }
+
+    .header_contents {
+        /* すりガラス */
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-right-color: rgba(255, 255, 255, 0.2);
+        border-bottom-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 70px;
+        padding-right: 30px;
+        position: fixed;
+        z-index: 200;
+        top: 0;
+        width: 100%;
+        height: 80px;
+    }    
+    
+    .header_logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    .menu ul {
+        padding-right: 10px;
+    }
+
+    .menu li {
+        margin: 0;
+        width: 160px;
+        float: left;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .menu li.invert {
+        color: #333;
+    }
+
+    .menu a {
+        text-decoration: none;
+    }
+
+    .gnav_about {
+        padding-left: 30px;
+    }
+
+    .gnav_access {
+        padding-right: 40px;
+        padding-left: 20px;
+    }
+
+    /* main */
+    .main_sp {
+        display: none;
+    }
+
+    .main_visual {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .main_visual h1 {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 2.5em;
+        letter-spacing: 0.1em;
+        color: #ffffee;
+    }
+
+    .main_visual p {
+        position: absolute;
+        z-index: 2;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 1.5em;
+        letter-spacing: 0.1em;
+        color: #ffffee;
+    }
+
+
+    .slider {
+        display: block;
+        position:relative;
+        z-index: 1;
+        /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+        height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+    }
+    
+        /*　背景画像設定　*/
+    
+    .slider-item01 {
+        background-image: url(../images/egao_gakusei_1.jpg);
+    }
+    
+    .slider-item02 {
+        background-image: url(../images/egao_open_4.jpg);
+    }
+    
+    .slider-item03 {
+        background-image: url(../images/egao_mt_1.jpg);
+    }
+
+    .slider-item {
+        width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+        height:100vh;/*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+        background-repeat: no-repeat;/*背景画像をリピートしない*/
+        background-position: center;/*背景画像の位置を中央に*/
+        background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+    }
+    
+        /*矢印の設定*/
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        z-index: 3;
+        top: 42%;
+        cursor: pointer;/*マウスカーソルを指マークに*/
+        outline: none;/*クリックをしたら出てくる枠線を消す*/
+        border-top: 2px solid #fff;/*矢印の色*/
+        border-right: 2px solid #fff;/*矢印の色*/
+        height: 25px;
+        width: 25px;
+    }
+
+    .slick-prev {/*戻る矢印の位置と形状*/
+        left:2.5%;
+        transform: rotate(-135deg);
+    }
+
+    .slick-next {/*次へ矢印の位置と形状*/
+        right:2.5%;
+        transform: rotate(45deg);
+    }
+
+        /*ドットナビゲーションの設定*/
+    .slick-dots {
+        position: relative;
+        z-index: 3;
+        text-align:center;
+        margin:-50px 0 0 0;/*ドットの位置*/
+    }
+
+    .slick-dots li {
+        display:inline-block;
+        margin:0 5px;
+    }
+
+    .slick-dots button {
+        color: transparent;
+        outline: none;
+        width:8px;/*ドットボタンのサイズ*/
+        height:8px;/*ドットボタンのサイズ*/
+        display:block;
+        border-radius:50%;
+        background:#fff;/*ドットボタンの色*/
+    }
+
+    .slick-dots .slick-active button{
+        background:#333;/*ドットボタンの現在地表示の色*/
+    }
+
+    /* section */
+    h2 {
+        font-size: 2em;
+        padding: 80px 30px 30px 30px;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        text-orientation: sideways;  
+        float: left;  
+    }
+
+    h3 {
+        font-size: 2em;
+        padding-top: 300px;
+    }
+
+    /* About */
+
+    .sec_contents {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .sec_1 {
+        padding-bottom: 50px;
+    }
+
+    .sec_1 h3 {
+        text-align: center;
+    }
+
+    .sec_1 img {
+        padding-top: 200px;
+    }
+
+    /* Project */
+
+    .sec_2 li {
+        flex-direction : row-reverse;
+    }
+
+    .sec_2 img {
+        padding-top: 100px;
+    }
+
+    /* Instagram */
+
+    .sec_3 {
+        padding-bottom: 150px;
+    }
+
+    .sec_3 img {
+        width: 70%;
+        display: block;
+        margin: auto;
+        margin-bottom: 50px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(128, 128, 128, 0.1);
+    }
+
+    .sec_3 p {
+        padding-top: 200px;
+        padding-left: 200px;
+    }
+
+    /* Access */
+
+    .map_sp {
+        display: none;
+    }
+
+    .sec_4 {
+        height: 1300px;
+        width: auto;
+    }
+
+    .map {
+        display: block;
+        padding-top: 120px;
+    }
+
+    .access_pc img{
+        width: 80%;
+        padding-top: 80px;
+    }
+
+    .sec_4_p {
+        padding-top: 30px;
+    }
+
+    /* footer */
+    footer {
+        background-image: url(../images/footer_wave.svg);
+        height: 300px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .footer_p {
+        padding-top: 160px;
+        padding-left: 60px;
+        color: #333;
+        font-weight: bold;
+    }
+}
+    
